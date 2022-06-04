@@ -25,4 +25,11 @@ public class BaseEntity extends BaseTimeEntity {
     @LastModifiedBy
     private String lastModifiedBy;
 
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime lastModifiedDate;
+
 }

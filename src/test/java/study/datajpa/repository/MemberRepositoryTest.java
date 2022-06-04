@@ -193,12 +193,12 @@ class MemberRepositoryTest {
 
         System.out.println("totalElements = " + totalElements);
 
-        assertThat(content.size()).isEqualTo(3);
-        assertThat(page.getTotalElements()).isEqualTo(5); //slice ㄴㄴ
-        assertThat(page.getNumber()).isEqualTo(0);
-        assertThat(page.getTotalPages()).isEqualTo(2); //slice ㄴㄴ
-        assertThat(page.isFirst()).isTrue();
-        assertThat(page.hasNext()).isTrue();
+        assertThat(content.size()).isEqualTo(3); //조회된 데이터 수
+        assertThat(page.getTotalElements()).isEqualTo(5); //전체 데이터 수 <-> slice ㄴㄴ
+        assertThat(page.getNumber()).isEqualTo(0); //페이지번호
+        assertThat(page.getTotalPages()).isEqualTo(2); //전체 페이지 번호 <-> slice ㄴㄴ
+        assertThat(page.isFirst()).isTrue(); //첫번째 항목인가?
+        assertThat(page.hasNext()).isTrue(); //다음 페이지가 있는가?
 
     }
 

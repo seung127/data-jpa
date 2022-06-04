@@ -44,6 +44,8 @@ public class MemberJpaRepository {
         return em.find(Member.class,id);
     }
 
+    //---------------------------------------------------------------------------------------------------------------------------------------
+
     public List<Member> findByUsernameAndAgeGreaterThan(String username, int age) {
         return em.createQuery("select m from Member m where m.username = :username and m.age > :age")
                 .setParameter("username", username)
@@ -51,6 +53,7 @@ public class MemberJpaRepository {
                 .getResultList();
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------
 
     public List<Member> findByPage(int age, int offset, int limit) {
         return em.createQuery("select m from Member m where m.age = :age order by m.username desc")
@@ -65,6 +68,8 @@ public class MemberJpaRepository {
                 .setParameter("age", age)
                 .getSingleResult();
     }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------
 
     //벌크성 쿼리
     public int bulkAgePlus(int age){
